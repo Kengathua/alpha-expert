@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alpha Expert</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--Search Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+    <!--Social icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!--Next and previous icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ================================CSS scripts========================-->
+
+    <!--base css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+
+    <!--================================Javascript scripts============================-->
+
+    <!--index js-->
+    <script src="{% static '/js/index.js' %}" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+    function loadSee(){
+        console.log("loaded")
+    }
+    function getApi(){
+    url='http://127.0.0.1:8000/analysis/Results/'
+    fetch(url)
+    .then(
+        response => response.json();
+        console.log(response)
+    )
+    .then(data => console.log(data));
+    }
+    </script>
+
+</head>
+
+<body onload="loadSee()">
+    <!-- Header-->
+    <header id="header-fix" class="access-point">
+        <div class="access-container" id="home">
+            <ul class="social-list">
+                <div class="top-right">
+                    <ul class="sign-area">
+                        {% if user.is_authenticated %}
+                        <li class="sign-options"><i class="signup-details"></i><a href="#profile" class="login-form"> {{
+                                user }} </a> <a href="/buy/sign-out" class="register-form"> Logout </a></li>
+                        {% else %}
+                        <!--onclick="login()"-->
+                        <!--onclick="register()"-->
+                        <li class="sign-options"><i class="signup-details"></i> <a href="/users/sign-in"
+                                class="login-form">
+                                Login </a> Or <a href="/users/sign-in" class="register-form"> Register </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <li class="social-item"><a style="color: whitesmoke;" href="mailto:alphaexperts@gmail.com"><i
+                            class="fa fa-envelope pr-1"></i> alphaexperts@gmail.com </a></li>
+                <li class="social-item"><a style="color: whitesmoke;" href="tel:+254718488252"><i
+                            class="fa fa-phone pr-1"></i> +254718488252</a></li>
+                <li class="social-item"><a href="#facebook" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                <li class="social-item"><a href="#twitter" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                <li class="social-item"><a href="#linkedin" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li class="social-item"><a href="#google" class="google"><i class="fa fa-google"></i></a></li>
+                <li class="social-item"><a href="#instagram" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                <li class="social-item"><a href="#youtube" class="youtube"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+            <nav class="navbar">
+                <a href="#" class="nav-logo">Alpha Experts.</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#market" class="nav-link">Market</a></li>
+                    <li class="nav-item"><a href="#analysis" class="nav-link">Analysis</a></li>
+                    <li class="nav-item"><a href="#charts" class="nav-link">Charts</a></li>
+                    <li class="nav-item"><a href="#news" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header-->
+
+    <!-- Dynamic data -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!--end of body-->
+</body>
+
+</html>

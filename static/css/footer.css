@@ -1,0 +1,155 @@
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+li{
+    color: whitesmoke;
+}
+
+li:hover{
+    color: blue;
+}
+
+.footer-section{
+    position: relative;
+    background-color: #212529;
+    line-height: 23px;
+    color: whitesmoke;
+    height: 70vh;
+}
+
+.container{
+    padding-top: 50px;
+    position: relative;
+}
+
+.footer-display{
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.latest-tweets{
+    display: inline-block;
+    width: 25%;
+    background-color: none;
+    padding :0px 5px ;
+}
+
+.latest-tweet-details{
+    padding-left: 5px;
+}
+.latest-tweet-label{
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.latest-tweet-item{
+    display: inline-flex;
+    padding-top: 5px;
+}
+
+.tweet-sender{
+    color: blueviolet;
+}
+
+.home-extensions{
+    display: inline-flex;
+    margin-left: 20px;
+    width: 50%;
+}
+
+.extension-label{
+    font-size: 18px;
+}
+
+.extension-item{
+    padding-right: 20px;
+    width: 33%;
+}
+
+.extension-element:hover{
+    color: blue;
+} 
+
+.extension-icon:hover{
+    color: chocolate;
+}
+
+/* ===============================================Contacts==================================== */
+
+.contacts-area{
+    margin-left: 20px;
+    width: 25%;
+}
+
+.contact-label{
+    font-size: 18px;
+}
+
+
+/* ================================Footer Bottom============================================ */
+.footer-bottom{
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    padding: 1% 10px;
+    background-color: #0f1316;
+    position: absolute;
+    bottom: 0;
+}
+.footer-bottom-display{
+    display: inline-flex;
+}
+
+.social-items{
+    background-color: none;
+    right: 0;
+    position: absolute;
+    float: right;
+}
+
+.social-list{
+    list-style: none;
+    display: inline-flex;
+}
+
+.social-item{
+    padding-right: 20px;
+}
+
+
+/* =========================================Social Icons================================= */
+.fa-twitter{
+    color: rgb(29, 155, 240);
+}
+.fa-facebook{
+    color: #1877f2;
+}
+
+.fa-linkedin{
+    color: #0a66c2;
+}
+
+.fa-youtube-play{
+    color: #c00;
+}
+
+.fa-pinterest-p{
+    color: #ff5247;
+}
+
+.fa-instagram{
+    color:  #C13584;
+}
+
+.fa-pinterest-p:hover{
+    color: #e60023;
+}
